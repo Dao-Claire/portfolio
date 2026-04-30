@@ -8,18 +8,21 @@
 body {
   background: #f4f6f9;
   color: #2c3e50;
+  line-height: 1.6;
 }
 
-/* HEADER STYLE STARTUP */
 header {
   background: linear-gradient(135deg, #2c3e50, #3498db);
   color: white;
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: relative;
 }
 
 header h1 {
-  font-size: 40px;
+  font-size: 42px;
 }
 
 header p {
@@ -28,14 +31,41 @@ header p {
   opacity: 0.9;
 }
 
-/* CONTAINER */
+.hero-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #2c3e50;
+  transform: translateY(-3px);
+}
+
 .container {
   width: 90%;
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 40px auto;
 }
 
-/* CARDS */
 .card {
   background: white;
   padding: 25px;
@@ -46,17 +76,24 @@ header p {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
-/* TITRES */
 h2 {
   margin-bottom: 15px;
   border-left: 5px solid #3498db;
   padding-left: 10px;
 }
 
-/* LISTES */
+h3 {
+  color: #3498db;
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 8px;
+}
+
 ul {
   margin-left: 20px;
   margin-top: 10px;
@@ -66,7 +103,6 @@ li {
   margin-bottom: 6px;
 }
 
-/* BADGES COMPETENCES */
 .badge {
   display: inline-block;
   background: #3498db;
@@ -75,24 +111,11 @@ li {
   margin: 5px;
   border-radius: 20px;
   font-size: 14px;
+  transition: 0.3s;
 }
 
-/* IMAGE PROJET */
-.project-img {
-  width: 100%;
-  margin-top: 15px;
-  border-radius: 12px;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+.badge:hover {
+  transform: scale(1.05);
 }
 
 .btn-project {
@@ -103,6 +126,7 @@ li {
   background: #1a252f;
 }
 
+/* whatsapp */
 .btn-whatsapp {
   background: #25D366;
 }
@@ -111,19 +135,9 @@ li {
   background: #1ebe5d;
 }
 
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 28px;
-  }
-
-  .card {
-    padding: 18px;
-  }
-}
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
   margin-top: 15px;
 }
@@ -138,7 +152,24 @@ li {
 .gallery img:hover {
   transform: scale(1.05);
 }
-.card h3 {
-  color: #3498db;
-  margin-bottom: 10px;
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  header p {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
 }

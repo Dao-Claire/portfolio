@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertisseur</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a href="../portfolio/index.html" class="floating-back">
+  ←
+</a>
+
+
+
+  <div class="container">
+
+    <h1>Convertisseur</h1>
+
+    <input type="number" id="inputValue" placeholder="Entrer une valeur">
+
+    <select id="type">
+      <option value="fcfa-eur">FCFA → EUR</option>
+      <option value="eur-fcfa">EUR → FCFA</option>
+
+      <option value="fcfa-usd">FCFA → USD</option>
+      <option value="usd-fcfa">USD → FCFA</option>
+
+      <option value="fcfa-cedi">FCFA → Cedi (GHS)</option>
+      <option value="cedi-fcfa">Cedi (GHS) → FCFA</option>
+
+      <option value="km-miles">KM → Miles</option>
+      <option value="miles-km">Miles → KM</option>
+
+      <option value="c-f">°C → °F</option>
+      <option value="f-c">°F → °C</option>
+    </select>
+
+    <button onclick="convert()">Convertir</button>
+
+    <h2 id="result">Résultat : -</h2>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

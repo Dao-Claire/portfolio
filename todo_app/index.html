@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <a href="../portfolio/index.html" class="floating-back">
+  ←
+</a>
+
+
+  <div class="container">
+
+    <div class="top-bar">
+      <h1>Ma To-Do List</h1>
+      <button onclick="toggleDarkMode()" id="darkBtn">Dark</button>
+    </div>
+
+    <p id="counter">0 tâche(s)</p>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Ajouter une tâche">
+      <button onclick="addTask()">+</button>
+    </div>
+
+    <div class="filters">
+      <button onclick="filterTasks('all')">Toutes</button>
+      <button onclick="filterTasks('active')">Actives</button>
+      <button onclick="filterTasks('completed')">Terminées</button>
+    </div>
+
+    <ul id="taskList"></ul>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
