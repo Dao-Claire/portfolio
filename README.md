@@ -1,2 +1,2 @@
 # portfolio
-Portfolio de développeur web et mobile (Flutter). Projets personnels et initiatives digitales à impact local, incluant une vision entrepreneuriale.
+Portfolio de développeuse web et mobile (Flutter). Projets personnels et solutions digitales orientées impact local et innovation.
