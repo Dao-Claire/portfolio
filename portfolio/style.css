@@ -447,6 +447,46 @@ a {
     transform: translateY(-4px);
 }
 
+
+/* =========================================================
+   BOUTON TÉLÉCHARGER LE CV
+========================================================= */
+
+.btn-cv {
+    color: var(--primary);
+
+    background: white;
+
+    border: 2px solid var(--border);
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+
+    gap: 8px;
+}
+
+.btn-cv:hover {
+    color: white;
+
+    background: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+.btn-cv span {
+    font-size: 18px;
+
+    transition: transform 0.3s ease;
+}
+
+.btn-cv:hover span {
+    transform: translateY(3px);
+}
+
+
 .btn-project {
     color: white;
 
