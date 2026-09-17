@@ -1218,73 +1218,470 @@ a {
     padding-bottom: 100px;
 }
 
-.contact-card {
-    text-align: center;
+.contact-wrapper {
+    position: relative;
 
-    padding: 70px 40px;
+    display: grid;
 
-    border-radius: 25px;
+    grid-template-columns: 1fr 1fr;
 
-    background: white;
+    gap: 70px;
 
-    border: 1px solid var(--border);
+    padding: 70px;
 
-    box-shadow: var(--shadow);
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7fbfd 0%,
+            #ffffff 55%,
+            #eef9fc 100%
+        );
+
+    border: 1px solid rgba(8, 127, 168, 0.12);
+
+    box-shadow:
+        0 20px 60px rgba(3, 31, 45, 0.08);
+
+    overflow: hidden;
 }
 
-.contact-card .section-title {
-    margin-bottom: 20px;
+
+/* ---------------------------------------------------------
+   DÉCORATION CONTACT
+--------------------------------------------------------- */
+
+.contact-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -100px;
+    bottom: -130px;
+
+    border-radius: 50%;
+
+    background: rgba(20, 184, 212, 0.08);
+
+    pointer-events: none;
 }
 
-.contact-card .section-title h2::after {
-    margin-left: auto;
-    margin-right: auto;
+.contact-wrapper::after {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(8, 127, 168, 0.08);
+
+    pointer-events: none;
 }
+
+
+/* ---------------------------------------------------------
+   INTRODUCTION CONTACT
+--------------------------------------------------------- */
+
+.contact-intro {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.contact-title {
+    margin-bottom: 25px;
+}
+
+.contact-title p {
+    color: var(--primary);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+}
+
+.contact-title h2 {
+    margin-top: 8px;
+
+    font-size: clamp(2.4rem, 5vw, 4rem);
+
+    line-height: 1.05;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION CONTACT
+--------------------------------------------------------- */
 
 .contact-description {
-    max-width: 650px;
+    max-width: 520px;
 
-    margin: 0 auto 30px;
+    margin-bottom: 30px;
 
     color: var(--text-light);
 
-    font-size: 17px;
+    font-size: 0.95rem;
+
+    line-height: 1.8;
 }
 
-.contact-info {
+
+/* ---------------------------------------------------------
+   DISPONIBILITÉ
+--------------------------------------------------------- */
+
+.contact-availability {
     display: flex;
 
-    justify-content: center;
+    align-items: flex-start;
 
-    flex-wrap: wrap;
+    gap: 14px;
 
-    gap: 15px;
+    max-width: 500px;
 
     margin-bottom: 30px;
+
+    padding: 18px 20px;
+
+    border-radius: 14px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid rgba(8, 127, 168, 0.10);
 }
 
-.contact-info a {
-    padding: 12px 18px;
+.availability-dot {
+    width: 10px;
+    height: 10px;
 
-    border-radius: 12px;
+    flex-shrink: 0;
 
-    background: #f8fafc;
+    margin-top: 5px;
 
-    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: #20b26b;
+
+    box-shadow:
+        0 0 0 5px rgba(32, 178, 107, 0.10);
+}
+
+.contact-availability strong {
+    display: block;
+
+    margin-bottom: 4px;
 
     color: var(--dark);
 
-    font-weight: 600;
-
-    transition: 0.3s ease;
+    font-size: 0.85rem;
 }
 
-.contact-info a:hover {
-    border-color: var(--primary);
+.contact-availability p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 0.78rem;
+
+    line-height: 1.5;
+}
+
+
+/* ---------------------------------------------------------
+   DOMAINES DE CONTACT
+--------------------------------------------------------- */
+
+.contact-services {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.contact-services span {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 13px;
+
+    border-radius: 50px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(8, 127, 168, 0.12);
 
     color: var(--primary);
 
-    transform: translateY(-3px);
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.contact-services span:hover {
+    background: var(--primary);
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   INFORMATIONS CONTACT
+--------------------------------------------------------- */
+
+.contact-details {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   CARTE CONTACT
+--------------------------------------------------------- */
+
+.contact-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 18px 20px;
+
+    border-radius: 16px;
+
+    background: var(--white);
+
+    border: 1px solid rgba(8, 127, 168, 0.10);
+
+    box-shadow:
+        0 8px 25px rgba(3, 31, 45, 0.04);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(6px);
+
+    border-color: rgba(8, 127, 168, 0.25);
+
+    box-shadow:
+        0 12px 30px rgba(3, 31, 45, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   ICÔNE CONTACT
+--------------------------------------------------------- */
+
+.contact-item-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #e0f2fe;
+
+    color: var(--primary);
+
+    font-size: 1.15rem;
+
+    font-weight: 700;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.contact-item:hover .contact-item-icon {
+    background: var(--primary);
+
+    color: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   TEXTE CONTACT
+--------------------------------------------------------- */
+
+.contact-item-content {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+.contact-item-content span {
+    color: var(--text-light);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.contact-item-content strong {
+    color: var(--dark);
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ---------------------------------------------------------
+   FLÈCHE CONTACT
+--------------------------------------------------------- */
+
+.contact-arrow {
+    color: var(--primary);
+
+    font-size: 1.1rem;
+
+    transition: transform 0.25s ease;
+}
+
+.contact-item:hover .contact-arrow {
+    transform: translateX(5px);
+}
+
+
+/* ---------------------------------------------------------
+   WHATSAPP CONTACT
+--------------------------------------------------------- */
+
+.contact-whatsapp {
+    border-color: rgba(32, 178, 107, 0.15);
+}
+
+.contact-whatsapp .contact-item-icon {
+    background: rgba(32, 178, 107, 0.10);
+
+    color: #20a866;
+}
+
+.contact-whatsapp:hover {
+    border-color: rgba(32, 178, 107, 0.30);
+}
+
+.contact-whatsapp:hover .contact-item-icon {
+    background: #20a866;
+
+    color: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   CTA CONTACT
+--------------------------------------------------------- */
+
+.contact-cta {
+    margin-top: 12px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background: var(--dark);
+}
+
+.contact-cta p {
+    margin-bottom: 15px;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 0.78rem;
+}
+
+.contact-cta .btn-whatsapp {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    background: #25d366;
+
+    color: var(--white);
+
+    box-shadow: none;
+}
+
+.contact-cta .btn-whatsapp:hover {
+    background: #1ebe5d;
+
+    color: var(--white);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(37, 211, 102, 0.20);
+}
+
+.contact-cta .btn-whatsapp span {
+    transition: transform 0.25s ease;
+}
+
+.contact-cta .btn-whatsapp:hover span {
+    transform: translateX(5px);
 }
 
 
@@ -1375,7 +1772,9 @@ footer p {
         opacity: 0.55;
     }
 
+
     /* Galerie : 3 images par ligne sur tablette */
+
     .project-gallery {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -1384,10 +1783,27 @@ footer p {
         height: 210px;
     }
 
+
     .apps-grid,
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+
+    /* Contact */
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 55px 45px;
+    }
+
+    .contact-description {
+        max-width: 650px;
+    }
+
 }
 
 
@@ -1413,6 +1829,9 @@ footer p {
         width: 40px;
         height: 40px;
     }
+
+
+    /* HERO */
 
     .hero {
         min-height: auto;
@@ -1440,11 +1859,17 @@ footer p {
         display: none;
     }
 
+
+    /* SECTIONS */
+
     .section {
         width: 88%;
 
         padding: 75px 0;
     }
+
+
+    /* ABOUT */
 
     .about-card {
         grid-template-columns: 1fr;
@@ -1454,6 +1879,9 @@ footer p {
         gap: 30px;
     }
 
+
+    /* PROJECT */
+
     .featured-project {
         padding: 30px;
     }
@@ -1462,7 +1890,9 @@ footer p {
         font-size: 38px;
     }
 
+
     /* Galerie mobile : 2 images par ligne */
+
     .project-gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
@@ -1473,10 +1903,16 @@ footer p {
         height: 190px;
     }
 
+
+    /* APPLICATIONS + COMPÉTENCES */
+
     .apps-grid,
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+
+    /* ENTREPRENEUR */
 
     .entrepreneur-card {
         flex-direction: column;
@@ -1495,17 +1931,68 @@ footer p {
         font-size: 35px;
     }
 
-    .contact-card {
-        padding: 50px 25px;
+
+    /* CONTACT */
+
+    .contact-section {
+        padding-bottom: 80px;
     }
 
-    .contact-info {
-        flex-direction: column;
+    .contact-wrapper {
+        gap: 35px;
+
+        padding: 40px 25px;
+
+        border-radius: 22px;
     }
 
-    .contact-info a {
-        width: 100%;
+    .contact-title h2 {
+        font-size: 2.5rem;
     }
+
+    .contact-description {
+        font-size: 0.88rem;
+    }
+
+    .contact-availability {
+        padding: 15px;
+    }
+
+    .contact-services {
+        gap: 7px;
+    }
+
+    .contact-services span {
+        padding: 7px 10px;
+
+        font-size: 0.68rem;
+    }
+
+    .contact-item {
+        padding: 15px;
+    }
+
+    .contact-item-icon {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 12px;
+    }
+
+    .contact-item-content strong {
+        font-size: 0.78rem;
+    }
+
+    .contact-cta {
+        padding: 20px;
+    }
+
+    .contact-cta .btn {
+        font-size: 13px;
+
+        padding: 12px 15px;
+    }
+
 }
 
 
@@ -1522,6 +2009,9 @@ footer p {
     .nav-links a {
         font-size: 10px;
     }
+
+
+    /* HERO */
 
     .hero h1 {
         font-size: 38px;
@@ -1541,7 +2031,9 @@ footer p {
         width: 100%;
     }
 
-    /* Galerie : une image par ligne sur très petit écran */
+
+    /* GALERIE */
+
     .project-gallery {
         grid-template-columns: 1fr;
     }
@@ -1550,7 +2042,46 @@ footer p {
         height: 250px;
     }
 
+
+    /* TITRES */
+
     .section-title h2 {
         font-size: 35px;
     }
+
+
+    /* CONTACT */
+
+    .contact-wrapper {
+        padding: 32px 18px;
+    }
+
+    .contact-title h2 {
+        font-size: 2.2rem;
+    }
+
+    .contact-item {
+        gap: 11px;
+        padding: 13px;
+    }
+
+    .contact-item-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 1rem;
+    }
+
+    .contact-item-content strong {
+        font-size: 0.72rem;
+    }
+
+    .contact-item-content span {
+        font-size: 0.62rem;
+    }
+
+    .contact-arrow {
+        font-size: 0.95rem;
+    }
+
 }
